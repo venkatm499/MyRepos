@@ -25,4 +25,4 @@ jobs:
           ssh -o "StrictHostKeyChecking no" -i /home/phare-dev/key-phare-dev-01.pem phare-dev@10.0.0.7 'mkdir -p /home/phare-dev/workspace'
           # ssh -o "StrictHostKeyChecking no" -i /home/phare-dev/key-phare-dev-01.pem phare-dev@10.0.0.7 'cd /home/phare-dev/workspace && git clone https://github.com/venkatm499/MyRepos.git'
           #ssh -o "StrictHostKeyChecking no" -i /home/phare-dev/key-phare-dev-01.pem phare-dev@10.0.0.7 'sudo su && cd /home/phare-dev/workspace/zibbet && bundle install'
-          ssh -o "StrictHostKeyChecking no" -i /home/phare-dev/key-phare-dev-01.pem phare-dev@10.0.0.7 'sudo su && cd /home/phare-dev/workspace/zibbet-client && npm install && ember serve'
+          ssh -o "StrictHostKeyChecking no" -i /home/phare-dev/key-phare-dev-01.pem phare-dev@10.0.0.7 'sudo su && cd /home/phare-dev/workspace/zibbet-client && npm install'
