@@ -22,7 +22,5 @@ jobs:
       - name: Connect to Azure VM
         run: |
           ssh-keygen -f /home/phare-dev/.ssh/known_hosts -R 10.0.0.7
-          ssh -i /home/phare-dev/key-phare-dev-01.pem phare-dev@10.0.0.7
-          mkdir -p /home/phare-dev/workspace
-          cd /home/phare-dev/workspace
-      - uses: actions/checkout@v3      
+          ssh -i /home/phare-dev/key-phare-dev-01.pem phare-dev@10.0.0.7 'mkdir -p /home/phare-dev/workspace'
+          ssh -i /home/phare-dev/key-phare-dev-01.pem phare-dev@10.0.0.7 'cd /home/phare-dev/workspace && git clone https://github.com/venkatm499/MyRepos.git'    
