@@ -16,11 +16,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-  deploy:
-    runs-on: [self-hosted, linux, x64]
-    steps:
-      - name: Connect to Azure VM
-        run: |
-          ssh-keygen -f /home/phare-dev/.ssh/known_hosts -R 10.0.0.7
-          ssh -o "StrictHostKeyChecking no" -i /home/phare-dev/key-phare-dev-01.pem phare-dev@10.0.0.7 'mkdir -p /home/phare-dev/workspace'
-          ssh -o "StrictHostKeyChecking no" -i /home/phare-dev/key-phare-dev-01.pem phare-dev@10.0.0.7 'cd /home/phare-dev/workspace/zibbet && bundle install' | sudo su
+      - name: Login via Az module
+        uses: azure/login@v1
+        with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
