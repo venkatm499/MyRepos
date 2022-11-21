@@ -2,7 +2,6 @@ name: CI
 on:
   push:
     branches:
-      - sample
       - refs/tags/@orgname/release
 jobs:
   build:
