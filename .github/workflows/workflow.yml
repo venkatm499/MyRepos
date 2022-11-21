@@ -20,7 +20,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello np, world ${{github.ref}}!
   prod-build:
-    if: github.ref == 'refs/heads/v*'
+    if: github.ref == 'refs/tags/v*'
     runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v3
