@@ -2,7 +2,7 @@ name: CI
 on:
   push:
     branches: [ "sample" ]
-  workflow_dispatch:
+    tags: [ "release" ]
 jobs:
   build:
     runs-on: [self-hosted, linux, x64]
