@@ -1,8 +1,11 @@
 name: CI
 on:
   push:
+    branches:
+      - sample
     tags:
       - v*
+      
 jobs:
   build:
     runs-on: [self-hosted, linux, x64]
