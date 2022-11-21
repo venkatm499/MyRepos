@@ -1,8 +1,8 @@
 name: CI
 on:
   push:
-    branches:
-      - refs/tags/@orgname/release
+    tags:
+      - v*
 jobs:
   build:
     runs-on: [self-hosted, linux, x64]
