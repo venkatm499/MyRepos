@@ -1,8 +1,10 @@
 name: CI
 on:
   push:
-    branches: [ "sample" ]
-    tags: [ "release" ]
+    tags:
+      - release
+    branches:
+      - sample
 jobs:
   build:
     runs-on: [self-hosted, linux, x64]
