@@ -1,16 +1,32 @@
 name: CI
 on:
   push:
-    branches: [ "sample" ]
-  workflow_dispatch:
+    tags:
+      - v*
+  pull_request:
+    branches:
+      - sample
+    
 jobs:
   build:
     runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: echo Hello np, world ${{github.ref}}!
+  np-build:
+    if: github.ref == 'refs/heads/sample' 
+    runs-on: [self-hosted, linux, x64]
+    environment: 'Development'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Hello np, world ${{github.ref}}!
+  prod-build:
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: [self-hosted, linux, x64]
+    environment: 'Production'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Hello prod, world ${{github.ref}}!
