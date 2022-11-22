@@ -15,13 +15,13 @@ jobs:
     if: github.ref == 'refs/heads/master' 
     runs-on: [self-hosted, linux, x64]
     environment: 'Development'
+    env: 
+         SUPER_SECRET: ${{ secrets.TEST_KEY }}  
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        env: 
-         SUPER_SECRET: ${{ secrets.TEST_KEY }}
         run: |
-          env | grep TEST
+          env | grep SUPER
           echo $SUPER_SECRET
           echo Hello np, world ${{github.ref}} ! 
   prod-build:
