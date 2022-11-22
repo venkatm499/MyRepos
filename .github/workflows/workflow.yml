@@ -21,6 +21,7 @@ jobs:
         env: 
          SUPER_SECRET: ${{ secrets.TEST_KEY }}
         run: |
+          env | grep TEST
           echo $SUPER_SECRET
           echo Hello np, world ${{github.ref}} ! 
   prod-build:
