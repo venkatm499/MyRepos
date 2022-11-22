@@ -4,6 +4,7 @@ on:
     tags:
       - v*
   pull_request:
+    types: review:approved
     branches:
       - master
     
@@ -15,7 +16,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello np, world ${{github.ref}}!
   np-build:
-    if: github.ref == 'refs/heads/sample' 
+    if: github.ref == 'refs/heads/master' 
     runs-on: [self-hosted, linux, x64]
     environment: 'Development'
     steps:
