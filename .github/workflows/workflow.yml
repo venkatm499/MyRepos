@@ -15,6 +15,7 @@ jobs:
   np-build:
     if: github.ref == 'refs/heads/sample' 
     runs-on: [self-hosted, linux, x64]
+    environment: 'Development'
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
@@ -22,6 +23,7 @@ jobs:
   prod-build:
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: [self-hosted, linux, x64]
+    environment: 'Production'
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
