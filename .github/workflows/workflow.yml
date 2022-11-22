@@ -4,6 +4,7 @@ on:
     tags:
       - v*
   pull_request:
+    types: review:approved
     branches:
       - master
     
