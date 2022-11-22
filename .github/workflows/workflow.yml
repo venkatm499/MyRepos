@@ -15,10 +15,12 @@ jobs:
     if: github.ref == 'refs/heads/master' 
     runs-on: [self-hosted, linux, x64]
     environment: 'Development'
+    env: 
+      super_secret: ${{ secrets.TEST_KEY }}
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: echo Hello np, world ${{github.ref}} ${{secrets.TEST_KEY}}! ${{secrets.AZURE_CREDENTIALS}}
+        run: echo Hello np, world ${{github.ref}} ${{secrets.TEST_KEY}}! "$SUPER_SECRET"
   prod-build:
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: [self-hosted, linux, x64]
