@@ -14,6 +14,7 @@ jobs:
       - name: update dependencies
         run: echo sample ${{github.ref}}
   store_artifacts:
+    needs: build 
     runs-on: [self-hosted, linux, x64]
     steps:
       - name: store staging artifacts
