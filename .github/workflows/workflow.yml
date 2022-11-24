@@ -25,7 +25,7 @@ jobs:
             sed -i "/^KEYVAULT_ENV:/s/:.*$/: development/" /home/phare-dev/workspace/staging/MyRepos/.env
             echo "action_state=$(npm --version)" >> $GITHUB_ENV
             test=$(npm --version)
-            echo $test
+            echo $test done
             
       - name : sample
         run: |
