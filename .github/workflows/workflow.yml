@@ -23,9 +23,7 @@ jobs:
             mkdir -p /home/phare-dev/workspace/staging
             cp -R /home/phare-dev/actions-runner/_work/MyRepos/MyRepos /home/phare-dev/workspace/staging/
             sed -i "/^KEYVAULT_ENV:/s/:.*$/: development/" /home/phare-dev/workspace/staging/MyRepos/.env
-            echo "action_state=yellow" >> $GITHUB_ENV
-            echo "$action_state"
-            echo "${{ env.action_state }}"
+            echo "action_state=$(npm --version)" >> $GITHUB_ENV
       - name : sample
         run: |
             echo "$action_state"
