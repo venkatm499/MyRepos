@@ -26,6 +26,10 @@ jobs:
             echo "action_state=yellow" >> $GITHUB_ENV
             echo "$action_state"
             echo "${{ env.action_state }}"
+      - name : sample
+        run: |
+            echo "$action_state"
+            echo "${{ env.action_state }}"
       - name: store prod artifacts
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
