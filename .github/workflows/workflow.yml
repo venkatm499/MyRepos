@@ -22,10 +22,10 @@ jobs:
         run: |
             mkdir -p /home/phare-dev/workspace/staging
             cp -R /home/phare-dev/actions-runner/_work/MyRepos/MyRepos /home/phare-dev/workspace/staging/
-            sed -i "/^KEYVAULT_ENV:/s/:.*$/: development/" /home/phare-dev/workspace/staging/.env
+            sed -i "/^KEYVAULT_ENV:/s/:.*$/: development/" /home/phare-dev/workspace/staging/MyRepos/.env
       - name: store prod artifacts
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
             mkdir -p /home/phare-dev/workspace/production
             cp -R /home/phare-dev/actions-runner/_work/MyRepos/MyRepos /home/phare-dev/workspace/production/
-            sed -i "/^KEYVAULT_ENV:/s/:.*$/: production/" /home/phare-dev/workspace/production/.env
+            sed -i "/^KEYVAULT_ENV:/s/:.*$/: production/" /home/phare-dev/workspace/production/MyRepos/.env
