@@ -27,7 +27,7 @@ jobs:
             test=$(npm --version)
             echo $test done
             su phare-dev
-            cp -R /home/phare-dev/test/zibbet /home/phare-dev/test/zibbet3
+            cp -R /home/phare-dev/test/zibbet /home/phare-dev/test/zibbet4
             
       - name : sample
         run: |
