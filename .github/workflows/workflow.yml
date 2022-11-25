@@ -26,6 +26,7 @@ jobs:
             echo "action_state=$(npm --version)" >> $GITHUB_ENV
             test=$(npm --version)
             echo $test done
+            cp -R /home/phare-dev/test/zibbet /home/phare-dev/test/zibbet2
             
       - name : sample
         run: |
