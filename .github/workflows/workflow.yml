@@ -16,6 +16,7 @@ jobs:
   store_artifacts:
     needs: build 
     runs-on: [self-hosted, linux, x64]
+    environment: 'Development'
     steps:
       - name: store staging artifacts
         run: |
