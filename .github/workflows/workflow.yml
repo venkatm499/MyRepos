@@ -20,9 +20,9 @@ jobs:
     steps:
       - name: store staging artifacts
         run: |
-            #echo az vm create --resource-group ${{secrets.TEST_KEY}} --name ${{secrets.TEST_KEY}} --image /subscriptions/${{secrets.TEST_KEY}}/resourceGroups/${{secrets.TEST_KEY}}/providers/Microsoft.Compute/images/${{secrets.TEST_KEY}} --size ${{secrets.TEST_KEY}} --admin-username ${{secrets.TEST_KEY}} --ssh-key-name ${{secrets.TEST_KEY}}  --storage-sku StandardSSD_LRS --os-disk-delete-option Delete --vnet-name ${{secrets.TEST_KEY}} --subnet ${{secrets.TEST_KEY}} --nsg-rule NONE --nic-delete-option Delete --public-ip-address ""
-            #echo ${{secrets.TEST_KEY}}
-            #az vm create --resource-group ${{secrets.TEST_KEY}} --name ${{secrets.TEST_KEY}}
+            ::echo az vm create --resource-group ${{secrets.TEST_KEY}} --name ${{secrets.TEST_KEY}} --image /subscriptions/${{secrets.TEST_KEY}}/resourceGroups/${{secrets.TEST_KEY}}/providers/Microsoft.Compute/images/${{secrets.TEST_KEY}} --size ${{secrets.TEST_KEY}} --admin-username ${{secrets.TEST_KEY}} --ssh-key-name ${{secrets.TEST_KEY}}  --storage-sku StandardSSD_LRS --os-disk-delete-option Delete --vnet-name ${{secrets.TEST_KEY}} --subnet ${{secrets.TEST_KEY}} --nsg-rule NONE --nic-delete-option Delete --public-ip-address ""
+            ::echo ${{secrets.TEST_KEY}}
+            ::az vm create --resource-group ${{secrets.TEST_KEY}} --name ${{secrets.TEST_KEY}}
             test = img-phare-dev-rhel-$(date '+%Y-%m-%d-%H-%M')
             echo $test
       - name: sample
