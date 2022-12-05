@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: store staging artifacts
         run: |
-            test = "::img-phare-dev-rhel-::$(date '+%Y-%m-%d-%H-%M')"
+            echo "{test}={img-phare-dev-rhel-$(date '+%Y-%m-%d-%H-%M')}" >> $GITHUB_ENV
             echo $test
       - name: sample
         run: |
