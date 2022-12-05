@@ -20,8 +20,9 @@ jobs:
     steps:
       - name: store staging artifacts
         run: |
-            test=img-phare-dev-rhel-$(date '+%Y-%m-%d-%H-%M')
+            test=img-phare-dev-rhel-$(date '+%Y-%m-%d-%H-%M') >> $GITHUB_ENV
             echo $test done
       - name: sample
         run: |
            echo sample $test done
+           echo "${{ env.test }}"
