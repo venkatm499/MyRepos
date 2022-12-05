@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: store staging artifacts
         run: |
-            test = img-phare-dev-rhel-$(date '+%Y-%m-%d-%H-%M')
+            test = "img-phare-dev-rhel-$(date '+%Y-%m-%d-%H-%M')"
             echo $test
       - name: sample
         run: |
