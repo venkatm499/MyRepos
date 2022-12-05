@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: store staging artifacts
         run: |
-            test = $(date '+%Y-%m-%d-%H-%M')
+            test = $(date +%Y-%m-%d-%H-%M)
             echo $test
       - name: sample
         run: |
