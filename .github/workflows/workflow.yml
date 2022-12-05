@@ -24,4 +24,5 @@ jobs:
             echo $test
       - name: sample
         run: |
-           echo sample $test
+           echo sample "$test"
+           echo "${{ env.test }}"
